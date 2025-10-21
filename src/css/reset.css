@@ -80,11 +80,15 @@ input:focus {
 }
 
 .loader {
+	display: block;
+	/* ✅ щоб працювали width/height */
 	position: fixed;
+	/* фіксуємо відносно вікна */
 	top: 50%;
+	/* по вертикалі */
 	left: 50%;
+	/* по горизонталі */
 	transform: translate(-50%, -50%);
-
 	width: 60px;
 	height: 60px;
 	border: 6px solid #ccc;
@@ -94,12 +98,15 @@ input:focus {
 	z-index: 9999;
 }
 
+/* приховування через клас .hidden */
+.hidden {
+	display: none;
+	/* можна також зробити opacity: 0; для анімації */
+}
+
+/* анімація обертання */
 @keyframes spin {
 	to {
 		transform: translate(-50%, -50%) rotate(360deg);
 	}
-}
-
-.hidden {
-	display: none;
 }
